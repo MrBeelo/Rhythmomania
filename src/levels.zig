@@ -2,6 +2,7 @@ const std = @import("std");
 const rl = @import("raylib");
 const main_mod = @import("main.zig");
 const note_mod = @import("note.zig");
+const feedback_mod = @import("feedback.zig");
 
 pub const level1 = [_]note_mod.NoteDataPair{
     .{ .beat = 1, .index = 0 },
@@ -30,15 +31,14 @@ pub fn startLevel() void {
     main_mod.gamestate = .PLAYING;
 
     note_mod.level.clearRetainingCapacity();
+    note_mod.notes.clearRetainingCapacity();
     for (level1) |noteDataPair| {
         note_mod.level.append(noteDataPair) catch {};
     }
 
     main_mod.current_beat = 0;
     main_mod.score = 0;
-}
 
-pub fn loseLevel() void {
-    main_mod.gamestate = .DEAD;
-    main_mod.score = 0;
+    feedback_mod.miss_counter = 0;
+    feedback_mod.bad_counter = 0;
 }

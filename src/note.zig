@@ -79,11 +79,12 @@ pub fn updateNotes() void {
 
         if (level.items.len == 0 and notes.items.len == 0) main_mod.gamestate = .WON;
     }
+
+    if (feedback_mod.miss_counter >= 3 or feedback_mod.bad_counter >= 5) main_mod.gamestate = .DEAD;
 }
 
 pub fn drawNotes() void {
     for (notes.items) |*note| {
         note.draw();
     }
-    rl.drawText(std.fmt.allocPrintZ(main_mod.allocator, "NOTES LEFT: {d}", .{level.items.len}) catch "", 10, 50, 32, .black);
 }

@@ -56,7 +56,9 @@ pub fn main() void {
             .MAIN_MENU => {
                 main_menu_screen_mod.updateMainMenuScreen();
             },
-            .DEAD => {},
+            .DEAD => {
+                death_screen_mod.updateDeathScreen();
+            },
             .WON => {
                 win_screen_mod.updateWinScreen();
             },
@@ -78,7 +80,9 @@ pub fn main() void {
             .MAIN_MENU => {
                 main_menu_screen_mod.drawMainMenuScreen();
             },
-            .DEAD => {},
+            .DEAD => {
+                death_screen_mod.drawDeathScreen();
+            },
             .WON => {
                 win_screen_mod.drawWinScreen();
             },
