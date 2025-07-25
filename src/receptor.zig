@@ -29,7 +29,7 @@ const Receptor = struct {
 pub var receptors: [4]Receptor = undefined;
 
 pub fn loadReceptors() void {
-    receptor_texture_atlas = rl.loadTexture("res/receptor-atlas.png") catch |err| std.debug.panic("Crashed due to error: {}", .{err});
+    receptor_texture_atlas = rl.loadTexture("res/sprite/receptor-atlas.png") catch |err| std.debug.panic("Crashed due to error: {}", .{err});
 }
 
 pub fn unloadReceptors() void {

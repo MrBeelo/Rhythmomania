@@ -6,8 +6,8 @@ pub var glacial: rl.Font = undefined;
 pub var glacial_bold: rl.Font = undefined;
 
 pub fn loadGlacial() void {
-    glacial = rl.loadFontEx("res/glacial.otf", 100, null) catch |err| std.debug.panic("Crashed due to error: {}", .{err});
-    glacial_bold = rl.loadFontEx("res/glacial-bold.otf", 100, null) catch |err| std.debug.panic("Crashed due to error: {}", .{err});
+    glacial = rl.loadFontEx("res/font/glacial.otf", 100, null) catch |err| std.debug.panic("Crashed due to error: {}", .{err});
+    glacial_bold = rl.loadFontEx("res/font/glacial-bold.otf", 100, null) catch |err| std.debug.panic("Crashed due to error: {}", .{err});
 }
 
 pub fn unloadGlacial() void {

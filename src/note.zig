@@ -44,7 +44,7 @@ pub var level: std.ArrayList(NoteDataPair) = undefined;
 pub var notes: std.ArrayList(Note) = undefined;
 
 pub fn loadNotes() void {
-    note_texture_atlas = rl.loadTexture("res/note-atlas.png") catch |err| std.debug.panic("Crashed due to error: {}", .{err});
+    note_texture_atlas = rl.loadTexture("res/sprite/note-atlas.png") catch |err| std.debug.panic("Crashed due to error: {}", .{err});
     notes = std.ArrayList(Note).init(main_mod.allocator);
     level = std.ArrayList(NoteDataPair).init(main_mod.allocator);
 
@@ -87,4 +87,5 @@ pub fn drawNotes() void {
     for (notes.items) |*note| {
         note.draw();
     }
+    rl.drawText(std.fmt.allocPrintZ(main_mod.allocator, "BEAT: {d}", .{main_mod.current_beat}) catch "", 10, 50, 32, .black);
 }
