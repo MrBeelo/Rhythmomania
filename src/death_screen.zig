@@ -7,7 +7,7 @@ const main_mod = @import("main.zig");
 const levels_mod = @import("levels.zig");
 
 pub fn updateDeathScreen() void {
-    if (rl.isKeyPressed(.space)) levels_mod.startLevel();
+    if (rl.isKeyPressed(.space)) levels_mod.startLevel(main_mod.current_level);
     if (rl.isKeyPressed(.escape)) main_mod.gamestate = .MAIN_MENU;
 }
 

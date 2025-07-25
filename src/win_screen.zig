@@ -7,7 +7,7 @@ const main_mod = @import("main.zig");
 const levels_mod = @import("levels.zig");
 
 pub fn updateWinScreen() void {
-    if (rl.isKeyPressed(.space)) levels_mod.startLevel();
+    if (rl.isKeyPressed(.space)) levels_mod.startLevel(0); // temporary; should go to level select screen
     if (rl.isKeyPressed(.escape)) main_mod.gamestate = .MAIN_MENU;
 }
 

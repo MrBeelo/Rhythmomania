@@ -11,7 +11,7 @@ var note_texture_atlas: rl.Texture2D = undefined;
 var note_spawn_timer: timer_mod.Timer = undefined;
 
 pub const spawn_ypos: f32 = -receptor_mod.def_receptor_size;
-pub const note_speed: f32 = ((receptor_mod.def_receptor_ypos - spawn_ypos) / main_mod.delay_time) / 60;
+pub var note_speed: f32 = undefined;
 
 pub const Note = struct {
     index: usize,

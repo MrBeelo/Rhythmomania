@@ -16,9 +16,12 @@ pub const screenHeight = 450;
 
 pub var dt60: f32 = 0;
 
+pub var current_level: usize = 0;
 pub var current_beat: f32 = 0;
-pub const bpm: f32 = 70;
-pub const delay_time: f32 = 60 / bpm;
+pub var bpm: f32 = 70;
+pub var latency: f32 = 0.10; // in case music goes out of sync
+pub var delay_time: f32 = undefined;
+pub var song: rl.Music = undefined;
 
 pub var score: f32 = 0;
 
